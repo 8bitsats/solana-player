@@ -5,6 +5,9 @@
   },
   "extends": [
     "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:react/jsx-runtime",
     "standard",
     "prettier"
   ],
@@ -13,8 +16,10 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": ["./tsconfig.json", "./tsconfig.node.json"],
+    "tsconfigRootDir": "__dirname"
   },
   "settings": {
     "react": {
@@ -26,7 +31,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "no-debugger":"off",
+    "no-debugger": "off",
     "react/prop-types": "off",
     "react/jsx-curly-brace-presence": "error",
     "react/jsx-uses-react": "off",
